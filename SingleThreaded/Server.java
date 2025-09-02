@@ -19,6 +19,10 @@ public class Server{
         PrintWriter toClient = new PrintWriter(acceptedConnection.getOutputStream());
         BufferedReader fromClient = new BufferedReader(new InputStreamReader(acceptedConnection.getInputStream()));
         toClient.println("Hello from Server 😉");
+        toClient.close();
+        fromClient.close();
+        acceptedConnection.close();
+        socket.close();
       }
     } catch (IOException e) {
       e.printStackTrace();

@@ -16,6 +16,9 @@ public class Client {
     toSocket.println("Hello from the Client");
     String line = fromSocket.readLine();
     System.out.println("response from socket is : "+line);
+    toSocket.close();
+    fromSocket.close();
+    socket.close();
   }
 
   public static void main(String args[]){
